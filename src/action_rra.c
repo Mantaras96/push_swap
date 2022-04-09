@@ -6,7 +6,7 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 17:27:37 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/08 18:33:42 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/09 10:45:06 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,9 @@ void action_rrb(char **stack){
     stack[i] = temp;
     write(1, "rrb\n", 4);
 }
+
+void action_rrr(char **stacka, char **stackb){
+    action_rra(stacka);
+    action_rrb(stackb);
+    write(1, "rrr\n", 4);
+} 
