@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solved.c                                           :+:      :+:    :+:   */
+/*   resolve_four_five_numbers.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 18:26:51 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 11:58:19 by albertmanta      ###   ########.fr       */
+/*   Created: 2022/04/10 14:21:46 by albertmanta       #+#    #+#             */
+/*   Updated: 2022/04/10 16:06:13 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-//Function return 0 if stack1 != solved. 
-int solved(t_stacks *global)
+void    resolve_four_five_numbers(t_stacks *global)
 {
-    int i;
-
-    while (global->stack1[i] && global->stack1[i + 1]){
-        if(ft_atoi(global->stack1[i]) > global->stack1[i + 1])
-            return (0);
+    if (global->total == 4)
+    action_pb(global->stack1, global->stack2);
+    else {
+        action_pb(global->stack1, global->stack2);
+        action_pb(global->stack1, global->stack2);
     }
-    return (1);
+    resolve_three_numbers(global);
 }

@@ -6,13 +6,13 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 13:54:20 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/09 17:03:29 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 12:15:04 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-create_and_save_stacks(t_stacks *global,char **argv)
+void    create_and_save_stacks(t_stacks *global,char **argv)
 {
         global->stack1 = create_stack_a(global, argv);
         global->stack2 = create_stack_b(global, argv);

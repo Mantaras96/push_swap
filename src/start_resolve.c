@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solved.c                                           :+:      :+:    :+:   */
+/*   start_resolve.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 18:26:51 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 11:58:19 by albertmanta      ###   ########.fr       */
+/*   Created: 2022/04/10 12:15:44 by albertmanta       #+#    #+#             */
+/*   Updated: 2022/04/10 14:17:49 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-//Function return 0 if stack1 != solved. 
-int solved(t_stacks *global)
+void    start_resolve(t_stacks *global)
 {
-    int i;
-
-    while (global->stack1[i] && global->stack1[i + 1]){
-        if(ft_atoi(global->stack1[i]) > global->stack1[i + 1])
-            return (0);
+    if (solved(global) == 1)
+        ft_putstr_fd("Ordenado", 1);
+    else {
+        if (global->total == 2)
+            action_sa(global->stack1, 1);
+        else if (global->total == 3)
+            resolve_three_numbers(global);
+        else if (global->total <= 5)
+            resolve_four_five_numbers(global);
     }
-    return (1);
+    
 }

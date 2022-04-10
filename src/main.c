@@ -6,13 +6,13 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:35:33 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/09 13:53:57 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 12:15:28 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stacks global;
 
@@ -21,6 +21,7 @@ int main(int argc, char **argv)
 	global.total = (argc - 1);
 	validate_argv_arguments(argv);
 	create_and_save_stacks(&global, argv);
+	start_resolve(&global);
 	return(0);
 }
 

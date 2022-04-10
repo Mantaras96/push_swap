@@ -6,13 +6,14 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 17:27:37 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/09 10:45:06 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 14:00:14 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void action_rra(char **stack){
+void action_rra(char **stack, int writ)
+{
     int i;
     char *temp;
 
@@ -30,7 +31,8 @@ void action_rra(char **stack){
     write(1, "rra\n", 4);
 }
 
-void action_rrb(char **stack){
+void action_rrb(char **stack, int writ)
+{
     int i;
     char *temp;
 
@@ -48,8 +50,9 @@ void action_rrb(char **stack){
     write(1, "rrb\n", 4);
 }
 
-void action_rrr(char **stacka, char **stackb){
-    action_rra(stacka);
-    action_rrb(stackb);
+void action_rrr(char **stacka, char **stackb)
+{
+    action_rra(stacka, 0);
+    action_rrb(stackb, 0);
     write(1, "rrr\n", 4);
 } 

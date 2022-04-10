@@ -6,13 +6,14 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 10:46:17 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/09 11:57:13 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 12:02:50 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void action_pa(char **stacka, char **stackb){
+void action_pa(char **stacka, char **stackb)
+{
     stacka = addNumberToStack(stacka, stackb[0]),
     delNumberFromStack(stackb);
     write(1, "pa\n", 3);
