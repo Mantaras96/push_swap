@@ -6,7 +6,7 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:35:33 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 12:15:28 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 20:45:53 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	validate_argv_arguments(char **argv)
 		validate_duplicates(argv[i], argv);
 		i++;
    }
+   
 }
 
 // Validar que todos los valores son digitos + no supera el limite de int.
@@ -50,11 +51,11 @@ void	validate_arguments(char *str)
 		 continue;
 		}
 		if (!ft_isdigit(str[i]))
-			show_error_msg("No todos los caracteres son numericos");
+			show_error_msg("No todos los caracteres son numericos1");
 		i++;
 	}
-	if (ft_atoi(str) < 2147483648 && ft_atoi(str) >= -2147483648)
-		show_error_msg("No todos los caracteres son numericos");
+	if (ft_atoi(str) >= 2147483647 && ft_atoi(str) < -2147483648)
+		show_error_msg("No todos los caracteres son numericos2");
 }
 
 void	validate_duplicates(char *number, char **argv)

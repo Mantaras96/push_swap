@@ -6,17 +6,18 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:07:24 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 13:59:55 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 19:46:18 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h";
+#include "../include/push_swap.h"
 
 void action_ra(char **stack, int writ)
 {
     int     i;
     char    *temp;
 
+    i = 0;
     temp = stack[0];
     while (stack[i] && stack[i + 1]){
         stack[i] = stack[i + 1];
@@ -33,6 +34,7 @@ void action_rb(char **stack, int writ)
     int     i;
     char    *temp;
 
+    i = 0;
     temp = stack[0];
     while (stack[i] && stack[i + 1]){
         stack[i] = stack[i + 1];

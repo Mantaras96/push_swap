@@ -6,7 +6,7 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 10:46:17 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 12:02:50 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 19:38:32 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char **addNumberToStack(char **stacka, char *number_add)
     int j;
     char **str;
 
+    i = 0;
     while (stacka[i])
         i++;
     str = (char **)malloc(sizeof (char *) * (i + 2));
@@ -47,11 +48,12 @@ void delNumberFromStack(char **stackb)
     int i;
     char **str;
 
+    i = 0;
     while(stackb[i])
         i++;
     str = (char **)malloc(sizeof(char *) * i);
     if (!str)
-        return (NULL);
+        show_error_msg("Error de memoria");
     i = 1;
     while(stackb[i])
     {

@@ -6,7 +6,7 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 17:27:37 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 14:00:14 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/10 19:46:47 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void action_rra(char **stack, int writ)
         i--;
     }
     stack[i] = temp;
+    if (writ)
     write(1, "rra\n", 4);
 }
 
@@ -47,6 +48,7 @@ void action_rrb(char **stack, int writ)
         i--;
     }
     stack[i] = temp;
+    if (writ)
     write(1, "rrb\n", 4);
 }
 

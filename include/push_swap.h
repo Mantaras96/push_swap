@@ -1,7 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -20,7 +20,7 @@ void	validate_argv_arguments(char **argv);
 void	validate_arguments(char *str);
 void	validate_duplicates(char *number, char **argv);
 int		solved(t_stacks *global);
-char	**create_stack_b(t_stacks *global,char **argv);
+char	**create_stack_b();
 char	**create_stack_a(t_stacks *global,char **argv);
 void	create_and_save_stacks(t_stacks *global,char **argv);
 void	action_ss(char **stacka, char **stackb);
@@ -37,9 +37,13 @@ void	delNumberFromStack(char **stackb);
 char	**addNumberToStack(char **stacka, char *number_add);
 void	action_pa(char **stacka, char **stackb);
 
-int *create_stack_numbers(t_stacks *global);
-int get_case(int *number);
-void resolve_three_numbers(t_stacks *global);
+int		*create_stack_numbers(t_stacks *global);
+int		get_case(int *number);
+void 	resolve_three_numbers(t_stacks *global);
+void    resolve_four_five_numbers(t_stacks *global);
+
+
+void    start_resolve(t_stacks *global);
 
 
 #endif
