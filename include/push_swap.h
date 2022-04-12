@@ -33,8 +33,8 @@ void	action_rr(char **stacka, char **stackb);
 void	action_rb(char **stack, int writ);
 void	action_ra(char **stack, int writ);
 void	action_pb(char **stacka, char **stackb);
-void	delNumberFromStack(char **stackb);
-char	**addNumberToStack(char **stacka, char *number_add);
+void	del_number_from_stack(char **stackb);
+char	**add_number_to_stack(char **stacka, char *number_add);
 void	action_pa(char **stacka, char **stackb);
 
 int		*create_stack_numbers(t_stacks *global);

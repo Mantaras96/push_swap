@@ -6,65 +6,63 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 10:46:17 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/10 19:38:32 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/11 23:33:52 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void action_pa(char **stacka, char **stackb)
+void	action_pa(char **stacka, char **stackb)
 {
-    stacka = addNumberToStack(stacka, stackb[0]),
-    delNumberFromStack(stackb);
-    write(1, "pa\n", 3);
+	stacka = add_number_to_stack(stacka, stackb[0]);
+	del_number_from_stack(stackb);
+	write(1, "pa\n", 3);
 }
 
-char **addNumberToStack(char **stacka, char *number_add)
+char	**add_number_to_stack(char **stacka, char *number_add)
 {
-    int i;
-    int j;
-    char **str;
+	int		i;
+	int		j;
+	char	**str;
 
-    i = 0;
-    while (stacka[i])
-        i++;
-    str = (char **)malloc(sizeof (char *) * (i + 2));
-    if (!str)
-        return (NULL);
-
-    str[0] = number_add;
-    i = 0;
-    j = 1;
-    while (stacka[i]){
-        str[j++] = stacka[i++];
-    }
-    str[j] = "\0";
-    free(stacka);
-    return (str);
+	i = 0;
+	while (stacka[i])
+		i++;
+	str = (char **)malloc(sizeof (char *) * (i + 2));
+	if (!str)
+		return (NULL);
+	str[0] = number_add;
+	i = 0;
+	j = 1;
+	while (stacka[i])
+		str[j++] = stacka[i++];
+	str[j] = "\0";
+	free(stacka);
+	return (str);
 }
 
-void delNumberFromStack(char **stackb)
+void	del_number_from_stack(char **stackb)
 {
-    int i;
-    char **str;
+	int		i;
+	char	**str;
 
-    i = 0;
-    while(stackb[i])
-        i++;
-    str = (char **)malloc(sizeof(char *) * i);
-    if (!str)
-        show_error_msg("Error de memoria");
-    i = 1;
-    while(stackb[i])
-    {
-        str[i - 1] = str[i];
-        i++;
-    }
+	i = 0;
+	while (stackb[i])
+		i++;
+	str = (char **)malloc(sizeof(char *) * i);
+	if (!str)
+		show_error_msg("Error de memoria");
+	i = 1;
+	while (stackb[i])
+	{
+		str[i - 1] = str[i];
+		i++;
+	}
 }
 
-void action_pb(char **stacka, char **stackb)
+void	action_pb(char **stacka, char **stackb)
 {
-    stackb = addNumberToStack(stackb, stacka[0]),
-    delNumberFromStack(stacka);
-    write(1, "pb\n", 3);
+	stacka = add_number_to_stack(stacka, stackb[0]);
+	del_number_from_stack(stackb);
+	write(1, "pb\n", 3);
 }
