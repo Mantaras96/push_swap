@@ -4,8 +4,6 @@
 # include "../libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
 
 typedef struct s_stacks
 {
@@ -14,6 +12,20 @@ typedef struct s_stacks
 	char	**stack2;
 	int		total;
 }	t_stacks;
+
+
+typedef struct s_number_list
+{
+	int					nbr;
+	struct s_number_list	*next;
+}	t_number_list;
+
+typedef struct s_stacks
+{
+	int					nbr_of_element;
+	struct s_number_list	*a;
+	struct s_number_list	*b;
+}				t_stacks;
 
 void	show_error_msg(char *str);
 void	validate_argv_arguments(char **argv);
