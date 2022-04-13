@@ -12,31 +12,39 @@
 
 #include "../include/push_swap.h"
 
-void	action_sa(char **stack, int writ)
+void	action_sa(t_stacks *stacks)
 {
-	char	*temp;
+	t_number_list *temp1;
+	t_number_list *temp2;
 
-	temp = stack[0];
-	stack[0] = stack[1];
-	stack[1] = temp;
-	if (writ)
-		write(1, "sa\n", 3);
+	if(!stacks->a || !stacks->a->next)
+		return (0);
+	temp1 = stacks->a;
+	temp2 = stacks->a->next->next;
+	stacks->a = stacks->a->next;
+	stacks->a->next = temp1;
+	stacks->a->next->next = temp2;
+	retrun (0);
 }
 
-void	action_sb(char **stack, int writ)
+void	action_sb(t_stacks *stacks)
 {
-	char	*temp;
+	t_number_list *temp1;
+	t_number_list *temp2;
 
-	temp = stack[0];
-	stack[0] = stack[1];
-	stack[1] = temp;
-	if (writ)
-		write(1, "sb\n", 3);
+	if(!stacks->b || !stacks->b->next)
+		return (0);
+	temp1 = stacks->b;
+	temp2 = stacks->b->next->next;
+	stacks->b = stacks->b->next;
+	stacks->b->next = temp1;
+	stacks->b->next->next = temp2;
+	retrun (0);
 }
 
-void	action_ss(char **stacka, char **stackb)
+void	action_ss(t_stacks *stacks)
 {
-	action_sa(stacka, 0);
-	action_sb(stackb, 0);
-	write(1, "ss\n", 1);
+	action_sa(stacks);
+	action_sb(stacks);
+	return(0);
 }

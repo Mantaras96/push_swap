@@ -12,57 +12,28 @@
 
 #include "../include/push_swap.h"
 
-void	action_pa(char **stacka, char **stackb)
+void	action_pa(t_stacks *stacks)
 {
-	stacka = add_number_to_stack(stacka, stackb[0]);
-	del_number_from_stack(stackb);
-	write(1, "pa\n", 3);
+	t_number_list *temp1;
+
+	if (!stacks->b)
+		return (0);
+	temp1 = stacks->b->next;
+	stacks->b->next = stacks->a;
+	stacks->a = stacks->b;
+	stacks->b = temp1;
+	return (0); 
 }
 
-char	**add_number_to_stack(char **stacka, char *number_add)
+void	action_pb(t_stacks *stacks)
 {
-	int		i;
-	int		j;
-	char	**str;
+	t_number_list *temp1;
 
-	i = 0;
-	while (stacka[i])
-		i++;
-	str = (char **)malloc(sizeof (char *) * (i + 2));
-	if (!str)
-		return (NULL);
-	str[0] = number_add;
-	i = 0;
-	j = 1;
-	while (stacka[i])
-		str[j++] = stacka[i++];
-	str[j] = "\0";
-	free(stacka);
-	return (str);
-}
-
-void	del_number_from_stack(char **stackb)
-{
-	int		i;
-	char	**str;
-
-	i = 0;
-	while (stackb[i])
-		i++;
-	str = (char **)malloc(sizeof(char *) * i);
-	if (!str)
-		show_error_msg("Error de memoria");
-	i = 1;
-	while (stackb[i])
-	{
-		str[i - 1] = str[i];
-		i++;
-	}
-}
-
-void	action_pb(char **stacka, char **stackb)
-{
-	stacka = add_number_to_stack(stacka, stackb[0]);
-	del_number_from_stack(stackb);
-	write(1, "pb\n", 3);
+	if (!stacks->a)
+		return (0);
+	temp1 = stacks->a->next;
+	stacks->a->next = stacks->b;
+	stacks->b = stacks->a;
+	stacks->a = temp1;
+	return (0);
 }
