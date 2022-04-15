@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   action_rra.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 17:27:37 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/14 21:23:13 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/15 09:57:34 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ void	action_rrr(t_stacks *stacks)
 {
 	action_rra(stacks);
 	action_rrb(stacks);
-	return(0);
+	return (0);
 }

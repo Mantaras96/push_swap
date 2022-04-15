@@ -3,27 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   solved.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 18:26:51 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/11 23:30:39 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/15 09:54:38 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 //Function return 0 if stack1 != solved. 
-int	solved(t_stacks *global)
+int	is_sorted(t_stacks *stack)
 {
-	int	i;
+	t_number_list	*temp1;
 
-	i = 0;
-	while (global->stack1[i] && global->stack1[i + 1])
+	temp1 = stack->a;
+	while (temp1 && temp1->next)
 	{
-		if (ft_atoi(global->stack1[i]) > ft_atoi(global->stack1[i + 1]))
+		if (temp1->nbr > temp1->next->nbr)
 			return (0);
-		i++;
+		temp1 = temp1->next;
 	}
-	ft_putstr_fd("Solucionadooo", 1);
 	return (1);
 }

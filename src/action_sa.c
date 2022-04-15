@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   action_sa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:40:52 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/11 23:38:24 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/15 09:57:25 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	action_sa(t_stacks *stacks)
 {
-	t_number_list *temp1;
-	t_number_list *temp2;
+	t_number_list	*temp1;
+	t_number_list	*temp2;
 
-	if(!stacks->a || !stacks->a->next)
+	if (!stacks->a || !stacks->a->next)
 		return (0);
 	temp1 = stacks->a;
 	temp2 = stacks->a->next->next;
@@ -29,10 +29,10 @@ void	action_sa(t_stacks *stacks)
 
 void	action_sb(t_stacks *stacks)
 {
-	t_number_list *temp1;
-	t_number_list *temp2;
+	t_number_list	*temp1;
+	t_number_list	*temp2;
 
-	if(!stacks->b || !stacks->b->next)
+	if (!stacks->b || !stacks->b->next)
 		return (0);
 	temp1 = stacks->b;
 	temp2 = stacks->b->next->next;
@@ -46,5 +46,5 @@ void	action_ss(t_stacks *stacks)
 {
 	action_sa(stacks);
 	action_sb(stacks);
-	return(0);
+	return (0);
 }

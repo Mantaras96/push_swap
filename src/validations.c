@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 20:57:47 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/14 00:17:22 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/15 09:54:51 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 // Validar que todos los valores son digitos + no supera el limite de int.
 void	validate_arguments(char *str)
@@ -49,17 +48,17 @@ void	validate_duplicates(char *number, char **argv)
 	}
 }
 
-void	ft_lstadd_back_number_list(t_number_list **alst, t_number_list *new)
+void	ft_lstadd_back_number_list(t_number_list **last, t_number_list *new)
 {
 	t_number_list	*s;
 
-	if (!new || !alst)
+	if (!new || !last)
 		return ;
-	s = *alst;
+	s = *last;
 	new->next = 0;
 	if (!s)
 	{
-		*alst = new;
+		*last = new;
 		return ;
 	}
 	while (s->next)
