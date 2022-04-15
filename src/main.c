@@ -6,7 +6,7 @@
 /*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:35:33 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/14 00:17:06 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/14 21:37:17 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ int	ft_mirartodobien(t_number_list *lst)
 	return (count);
 }
 
+int	is_sorted(t_stacks *stack)
+{
+	t_number_list *temp1;
+	
+	temp1 = stack->a;
+	
+	while (temp1 && temp1->next)
+	{
+		if (temp1->nbr > temp1->next->nbr)
+			return (0);
+		temp1 = temp1->next;
+	}
+	return (1);
+}
+
+
 int	main(int argc, char **argv)
 {
 	t_stacks	stack;
@@ -61,7 +77,21 @@ int	main(int argc, char **argv)
 	ft_memset(&stack, 0, sizeof(stack));
 	save_numbers_on_stack(argc - 1, argv, &stack);
 	ft_mirartodobien(stack.a);
+	if (!is_sorted(&stack))
+		sort_stack_chunks(&stack);
 	return (0);	
 }
+
+// int	main(int argc, char **argv)
+// {
+// 	t_stacks	stack;
+	
+// 	ft_memset(&stack, 0, sizeof(stack));
+// 	save_numbers_on_stack(argc - 1, argv, &stack);
+//	action
+// 	ft_mirartodobien(stack.a);
+// 	sort_stack_a_chunks(&stacks);
+// 	return (0);	
+// }
 
 
