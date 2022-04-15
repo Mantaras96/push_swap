@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+         #
+#    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/14 00:18:02 by albertmanta      ###   ########.fr        #
+#    Updated: 2022/04/15 10:13:10 by amantara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME	=	push_swap
 SRC	=	main.c \
 		validations.c \
 		error.c \
+		solved.c \
+		create_list_value.c \
 		# action_pa.c \
 		# action_ra.c \
 		# action_rra.c \
