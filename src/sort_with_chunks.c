@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 16:44:30 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/16 03:38:13 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/16 12:27:06 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	send_to_a_in_order(t_stacks *stacks)
 void	sort_stack_chunks(t_stacks *stacks)
 {
 	int	chunks;
+	int lower_nbr;
 
 	chunks = calcule_chunks(stacks);
 	if (chunks == -1)
@@ -66,6 +67,13 @@ void	sort_stack_chunks(t_stacks *stacks)
 	{
 		order_twenty_numbers(stacks);
 		order_two_three_numbers(stacks);
+	}
+	while (chunks > 1)
+	{
+		lower_nbr = find_lower_nubr(chunks, stacks->a);
+		chunks--;
+		if(chunks == 0)
+			order_two_three_numbers(stacks);
 	}
 	send_to_a_in_order(stacks);
 }

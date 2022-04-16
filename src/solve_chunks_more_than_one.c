@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   solve_chunks_more_than_one.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/07 23:35:33 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/16 10:53:48 by amantara         ###   ########.fr       */
+/*   Created: 2022/04/16 11:11:31 by amantara          #+#    #+#             */
+/*   Updated: 2022/04/16 12:27:06 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-//TODO: Delete function at end.
-int	ft_mirartodobien(t_number_list *lst)
+find_lower_nubr(int chunks, t_number_list *lst)
 {
-	size_t	count;
+	int i;
+	int lower_nubr;
+	t_number_list *temp1;
 
-	count = 0;
-	while (lst)
+	i = 0;
+	temp1 = lst;
+	lower_nubr = lst->nbr;
+	while(temp1)
 	{
-		ft_putnbr_fd(lst->nbr, 1);
-		lst = lst->next;
-		count++;
+		temp1 = temp1->next;
 	}
-	return (count);
-}
-
-int	main(int argc, char **argv)
-{
-	t_stacks	stack;
-
-	ft_memset(&stack, 0, sizeof(stack));
-	save_numbers_on_stack(argc - 1, argv, &stack);
-	if (!is_sorted(&stack))
-		sort_stack_chunks(&stack);
-	return (0);
+	
 }
