@@ -6,13 +6,13 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:07:24 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/15 09:58:19 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/15 22:46:16 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	action_ra(t_stacks *stacks)
+int	action_ra(t_stacks *stacks, int i)
 {
 	t_number_list	*temp1;
 	t_number_list	*temp2;
@@ -26,10 +26,12 @@ void	action_ra(t_stacks *stacks)
 	temp2->next = stacks->a;
 	stacks->a->next = 0;
 	stacks->a = temp1;
+	if (i)
+		write(1, "ra", 2);
 	return (0);
 }
 
-void	action_rb(t_stacks *stacks)
+int	action_rb(t_stacks *stacks, int i)
 {
 	t_number_list	*temp1;
 	t_number_list	*temp2;
@@ -43,12 +45,15 @@ void	action_rb(t_stacks *stacks)
 	temp2->next = stacks->b;
 	stacks->b->next = 0;
 	stacks->b = temp1;
+	if (i)
+		write(1, "rb", 2);
 	return (0);
 }
 
-void	action_rr(t_stacks *stacks)
+int	action_rr(t_stacks *stacks)
 {
-	action_ra(stacks);
-	action_rb(stacks);
+	action_ra(stacks, 0);
+	action_rb(stacks, 0);
+	write(1, "rr", 2);
 	return (0);
 }

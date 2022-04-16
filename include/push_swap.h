@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/15 12:01:03 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/16 03:41:53 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,25 @@ int		is_sorted(t_stacks *stack);
 void	create_list_argv_splitted(char **str, t_stacks *stack);
 
 // Actions
-void	action_ss(t_stacks *stacks);
-void	action_sb(t_stacks *stacks);
-void	action_sa(t_stacks *stacks);
-void	action_rra(t_stacks *stacks);
-void	action_rrb(t_stacks *stacks);
-void	action_rrr(t_stacks *stacks);
-void	action_pa(t_stacks *stacks);
-void	action_pb(t_stacks *stacks);
-void	action_ra(t_stacks *stacks);
-void	action_rb(t_stacks *stacks);
-void	action_rr(t_stacks *stacks);
+int		action_ss(t_stacks *stacks);
+int		action_sb(t_stacks *stacks, int i);
+int		action_sa(t_stacks *stacks, int i);
+int		action_rra(t_stacks *stacks, int i);
+int		action_rrb(t_stacks *stacks, int i);
+int		action_rrr(t_stacks *stacks);
+int		action_pa(t_stacks *stacks);
+int		action_pb(t_stacks *stacks);
+int		action_ra(t_stacks *stacks, int i);
+int		action_rb(t_stacks *stacks, int i);
+int		action_rr(t_stacks *stacks);
+
+//Order
+void	sort_stack_chunks(t_stacks *stacks);
+int		calcule_chunks(t_stacks *stacks);
+void	order_two_three_numbers(t_stacks *stacks);
+void	order_twenty_numbers(t_stacks *stacks);
+int		find_fourth_big_number(t_number_list *lst, int size);
+int		ft_stacklen(t_number_list *lst);
+int		get_biggest_number_i(t_number_list *lst);
 
 #endif

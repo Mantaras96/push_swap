@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:10:50 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/15 12:21:33 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/15 23:12:33 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	save_numbers_on_stack(int argc, char **argv, t_stacks *stack)
 {
 	if (argc == 0)
 		show_error_msg("Numeros introducidos 0");
-	else if (argc == 1) 
-		create_list_argv_splitted(ft_split(argv[1], 32), stack);	
+	else if (argc == 1)
+		create_list_argv_splitted(ft_split(argv[1], 32), stack);
 	else
 		create_list_argv(argc, argv, stack);
 }
