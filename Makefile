@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
+#    By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/16 03:21:17 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/20 00:16:25 by albertmanta      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ objs/%.o:src/%.c
 
 all:	$(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) include/push_swap.h
 	@make -C libft
 	@$(CC) $(OBJ) libft/libft.a -o $(NAME)
 
