@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 17:27:37 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/15 23:03:37 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:04:18 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	action_rra(t_stacks *stacks, int i)
 	temp2->next = stacks->a;
 	stacks->a = temp2;
 	if (i)
-		write(1, "rra", 3);
+		write(1, "rra\n", 4);
 	return (0);
 }
 
@@ -46,7 +46,7 @@ int	action_rrb(t_stacks *stacks, int i)
 	temp2->next = stacks->b;
 	stacks->b = temp2;
 	if (i)
-		write(1, "rrb", 3);
+		write(1, "rrb\n", 4);
 	return (0);
 }
 
@@ -54,6 +54,6 @@ int	action_rrr(t_stacks *stacks)
 {
 	action_rra(stacks, 0);
 	action_rrb(stacks, 0);
-	write(1, "rrr", 3);
+	write(1, "rrr\n", 4);
 	return (0);
 }

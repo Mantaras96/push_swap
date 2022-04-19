@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 10:46:17 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/15 22:46:51 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:03:31 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	action_pa(t_stacks *stacks)
 	stacks->b->next = stacks->a;
 	stacks->a = stacks->b;
 	stacks->b = temp1;
-	write(1, "pa", 2);
+	write(1, "pa\n", 3);
 	return (0);
 }
 
@@ -36,6 +36,6 @@ int	action_pb(t_stacks *stacks)
 	stacks->a->next = stacks->b;
 	stacks->b = stacks->a;
 	stacks->a = temp1;
-	write(1, "pb", 2);
+	write(1, "pb\n", 3);
 	return (0);
 }
