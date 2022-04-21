@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/16 03:41:53 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:11:34 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,10 @@ int		find_fourth_big_number(t_number_list *lst, int size);
 int		ft_stacklen(t_number_list *lst);
 int		get_biggest_number_i(t_number_list *lst);
 
+void	send_under_base_to_b(int base_number, t_stacks *stacks);
+void	find_number_and_send(t_stacks *stacks, int base_number, int size);
+int		count_numbers_less_or_equal(int number, t_number_list *lst);
+int		find_number(int chunks, t_number_list *lst, int size);
+
+void	send_number_stack_b(int size, int index, t_stacks *stack);
 #endif

@@ -6,7 +6,7 @@
 #    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/16 03:21:17 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/18 12:42:28 by amantara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC	=	main.c \
 		action_sa.c \
 		resolve_twenty_numbers.c \
 		get_biggest_number_i.c \
+		solve_chunks_more_than_one.c \
 		# create_and_save.c \
 		# resolve_four_five_numbers.c \
 		# resolve_three_numbers.c \
