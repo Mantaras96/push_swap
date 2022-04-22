@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:01:44 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/11 23:39:03 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/22 19:06:00 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

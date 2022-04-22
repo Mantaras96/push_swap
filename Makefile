@@ -6,31 +6,22 @@
 #    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/21 19:32:27 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/22 19:45:33 by amantara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
 SRC	=	main.c \
-		validations.c \
 		error.c \
-		solved.c \
+		start_obj.c \
+		is_sorted.c \
 		create_list_value.c \
-		sort_with_chunks.c \
-		resolve_three_numbers.c \
-		action_pa.c \
-		action_ra.c \
-		action_rra.c \
-		action_sa.c \
-		resolve_twenty_numbers.c \
-		get_biggest_number_i.c \
-		solve_chunks_more_than_one.c \
-		# create_and_save.c \
-		# resolve_four_five_numbers.c \
-		# resolve_three_numbers.c \
-		# solved.c \
-		# start_resolve.c \
+		actions/action_pa.c \
+		actions/action_ra.c \
+		actions/action_rra.c \
+		actions/action_sa.c \
+		actions/utils.c
 
 OBJ	= $(addprefix objs/,$(SRC:.c=.o))
 
