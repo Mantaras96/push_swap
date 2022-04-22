@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_list_value.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:10:50 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/22 20:36:02 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/23 00:22:41 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	create_list_argv(int argc, char **str, t_rules *stack)
 	while (i <= argc)
 	{
 		write(1, "A", 1);
-		add_value_end(stack, ft_atoi(str[i])); 
+		add_value_end(stack, ft_atoi(str[i]));
 		i++;
 	}
 	stack->argc = i;

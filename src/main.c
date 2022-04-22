@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:03:29 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/22 20:36:36 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/23 00:20:21 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_mirartodobien(t_rules *rules)
 {
-	t_stack *lst;
-	int	count;
+	t_stack	*lst;
+	int		count;
 
 	lst = rules->a;
 	count = 0;
@@ -28,11 +28,11 @@ int	ft_mirartodobien(t_rules *rules)
 	return (count);
 }
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_rules		*rules;
 	t_extreme	*extreme;
-	
+
 	rules = NULL;
 	extreme = NULL;
 	if (argc < 2)

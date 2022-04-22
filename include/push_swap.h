@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/22 20:31:08 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/23 00:25:29 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_extreme
 	int		big_rotate;
 	int		big_rrotate;
 	int		big_flag;
-	
+
 	int		smallest;
 	int		smallest_rotate;
 	int		smallest_rrotate;
@@ -79,30 +79,30 @@ typedef struct s_extreme
 // void	create_list_argv_splitted(char **str, t_stacks *stack);
 
 // Actions
-int		action_ss(t_rules *stacks);
-int		action_sb(t_rules *stacks, int i);
-int		action_sa(t_rules *stacks, int i);
-int		action_rra(t_rules *stacks, int i);
-int		action_rrb(t_rules *stacks, int i);
-int		action_rrr(t_rules *stacks);
-int		action_pa(t_rules *stacks);
-int		action_pb(t_rules *stacks);
-int		action_ra(t_rules *stacks, int i);
-int		action_rb(t_rules *stacks, int i);
-int		action_rr(t_rules *stacks);
+int			action_ss(t_rules *stacks);
+int			action_sb(t_rules *stacks, int i);
+int			action_sa(t_rules *stacks, int i);
+int			action_rra(t_rules *stacks, int i);
+int			action_rrb(t_rules *stacks, int i);
+int			action_rrr(t_rules *stacks);
+int			action_pa(t_rules *stacks);
+int			action_pb(t_rules *stacks);
+int			action_ra(t_rules *stacks, int i);
+int			action_rb(t_rules *stacks, int i);
+int			action_rr(t_rules *stacks);
 //Mostrar mensaje de error. (error.c)
-void	show_error_msg(char *str);
+void		show_error_msg(char *str);
 //Check if sorted (is_sorted.c)
-int		is_sorted(t_rules *stack);
+int			is_sorted(t_rules *stack);
 //Start structs (start_obj.c)
 t_extreme	*start_obj_extreme(t_extreme *extreme);
 t_rules		*start_obj_rules(t_rules *frame, char **argv);
 //Save values on struct (create_list_value.c)
-void	create_list_argv_splitted(char **str, t_rules *stack);
-void	create_list_argv(int argc, char **str, t_rules *stack);
-void	save_numbers_on_stack(int argc, char **argv, t_rules *stack);
+void		create_list_argv_splitted(char **str, t_rules *stack);
+void		create_list_argv(int argc, char **str, t_rules *stack);
+void		save_numbers_on_stack(int argc, char **argv, t_rules *stack);
 //Some utils can be fine (utils.c)
-void    add_value_end(t_rules *frame, int num);
+void		add_value_end(t_rules *frame, int num);
 // //Order
 // void	sort_stack_chunks(t_stacks *stacks);
 // int		calcule_chunks(t_stacks *stacks);
