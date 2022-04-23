@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   action_ra.c                                        :+:      :+:    :+:   */
+/*   solve_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/08 16:07:24 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/23 18:54:40 by amantara         ###   ########.fr       */
+/*   Created: 2022/04/23 10:25:20 by amantara          #+#    #+#             */
+/*   Updated: 2022/04/23 19:35:11 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int	action_ra(t_rules *stacks, int i)
-{	
-	if (stacks->a)
-		stacks->a = stacks->a->next;
-	if (i)
-		write(1, "ra\n", 3);
-	return (0);
-}
-
-int	action_rb(t_rules *stacks, int i)
+void	solve_numbers(t_rules *rules, t_extreme *extreme)
 {
-	if (stacks->b)
-		stacks->b = stacks->b->next;
-	if (i)
-		write(1, "rb\n", 3);
-	return (0);
-}
-
-int	action_rr(t_rules *stacks)
-{
-	action_ra(stacks, 0);
-	action_rb(stacks, 0);
-	write(1, "rr\n", 3);
-	return (0);
+	if (rules->argc < 4)
+	{
+		order_two_three_numbers(rules);
+	}
+	else if (rules->argc <= 5)
+		resolve_4_or_5(rules, extreme);
+	else if (rules->argc <= 100)
+		resolve_hundred(rules, extreme);
 }

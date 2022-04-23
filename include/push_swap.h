@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/23 00:25:29 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/23 20:28:15 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,22 @@ void		create_list_argv(int argc, char **str, t_rules *stack);
 void		save_numbers_on_stack(int argc, char **argv, t_rules *stack);
 //Some utils can be fine (utils.c)
 void		add_value_end(t_rules *frame, int num);
+void		find_median(t_rules *rules, t_stack *stack, t_extreme *extreme);
+//Some utils biggest smallest (utils_biggest_smallest.c)
+void		find_biggest_a(t_rules *rules, t_extreme *extreme);
+void		find_smallest_a(t_rules *rules, t_extreme *extreme);
+void		find_biggest_b(t_rules *rules, t_extreme *extreme);
+void		find_smallest_b(t_rules *rules, t_extreme *extreme);
+
+//Start solver (solve_numbers.c)
+void		solve_numbers(t_rules *rules, t_extreme *extreme);
+
+void		order_two_three_numbers(t_rules *stacks);
+void		resolve_three_numbers(t_rules *stacks);
+
+//Resolve when send 4 or 5 numbers
+void		resolve_4_or_5(t_rules *rules, t_extreme *extreme);
+void		resolve_four(t_rules *rules, t_extreme *extreme);
 // //Order
 // void	sort_stack_chunks(t_stacks *stacks);
 // int		calcule_chunks(t_stacks *stacks);

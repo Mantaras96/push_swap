@@ -5,36 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/10 12:55:31 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/23 13:02:58 by amantara         ###   ########.fr       */
+/*   Created: 2022/04/23 10:43:44 by amantara          #+#    #+#             */
+/*   Updated: 2022/04/23 13:21:42 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
-int	*create_stack_numbers(t_stacks *global)
+/*
+Max 5 cases
+	Case 1: SA
+	Case 2: sa, rra
+	Case 3: ra
+	Case 4: sa, ra
+	Case 5: rra
+*/
+int	get_case(int *number)
+{
+	if (number[2] > number[0] && number[2] > number[1] && number[1] < number[0])
+		return (1);
+	else if (number[2] < number[0] && number[2] < number[1]
+		&& number[1] < number[0])
+		return (2);
+	else if (number[2] < number[0] && number[2] > number[1]
+		&& number[1] < number[0])
+		return (3);
+	else if (number[2] > number[0] && number[2] < number[1]
+		&& number[1] > number[0])
+		return (4);
+	else if (number[2] < number[0] && number[2] < number[1]
+		&& number[1] > number[0])
+		return (5);
+	else
+		return (0);
+}
+
+int	*create_stack_numbers(t_rules *global)
 {
 	int				i;
-	t_number_list	*temp1;
+	t_stack			*temp1;
 	int				*stack_numbers;
 
 	temp1 = global->a;
-	stack_numbers = (int *)malloc(sizeof(int) * 4);
+	stack_numbers = (int *)malloc(sizeof(int) * (global->argc + 1));
 	i = 0;
-	while (i <= 2)
+	while (i < global->argc)
 	{
 		stack_numbers[i] = temp1->nbr;
-		if (temp1->next)
-			temp1 = temp1->next;
+		temp1 = temp1->next;
 		i++;
 	}
 	stack_numbers[i] = '\0';
 	return (stack_numbers);
 }
 
-
-
-void	resolve_three_numbers(t_stacks *stacks)
+void	resolve_three_numbers(t_rules *stacks)
 {
 	int	*stack_numbers;
 
@@ -57,28 +82,13 @@ void	resolve_three_numbers(t_stacks *stacks)
 		action_rra(stacks, 1);
 }
 
-int	ft_stacklen(t_number_list *lst)
+void	order_two_three_numbers(t_rules *stacks)
 {
-	int	count;
-
-	count = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		count++;
-	}
-	return (count);
-}
-
-void	order_two_three_numbers(t_stacks *stacks)
-{
-	int	list_size;
-
-	list_size = ft_stacklen(stacks->a);
-	if (list_size == 2)
-	{
+	if (stacks->argc == 2)
 		action_sa(stacks, 1);
-	}
-	else if (list_size == 3)
+	else if (stacks->argc == 3)
+	{
 		resolve_three_numbers(stacks);
+	}
+	return ;
 }

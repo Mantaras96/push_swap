@@ -6,7 +6,7 @@
 #    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/22 19:45:33 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/23 20:30:10 by amantara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,12 @@ SRC	=	main.c \
 		actions/action_ra.c \
 		actions/action_rra.c \
 		actions/action_sa.c \
-		actions/utils.c
+		actions/utils.c \
+		actions/utils_biggest_smallest.c \
+		resolve/solve_numbers.c \
+		resolve/resolve_three_numbers.c \
+		resolve/resolve_four_five_numbers.c \
+		
 
 OBJ	= $(addprefix objs/,$(SRC:.c=.o))
 

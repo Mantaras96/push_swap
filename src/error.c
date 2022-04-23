@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:01:44 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/23 00:22:27 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/23 10:18:00 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	show_error_and_free(char *str, t_rules *rules, t_extreme *extreme)
 	if (rules)
 	{
 		if (rules->a)
-			free_stack(rules->a);
+			//free_stack(rules->a);
 		if (rules->b)
-			free_stack(rules->b);
+			//free_stack(rules->b);
 		if (rules->line)
 			free(rules->line);
 		if (rules->str)
