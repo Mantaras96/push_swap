@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_obj.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:36:25 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/23 00:23:51 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/04/24 10:52:54 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,16 @@ t_extreme	*start_obj_extreme(t_extreme *extreme)
 	extreme->smallest_flag = 0;
 	extreme->after_rotate = 0;
 	return (extreme);
+}
+
+void reset_obj_extreme(t_extreme *extreme)
+{
+	extreme->biggest = 0;
+	extreme->big_rotate = 0;
+	extreme->big_rrotate = 0;
+	extreme->big_flag = 0;
+	extreme->smallest = 0;
+	extreme->smallest_rotate = 0;
+	extreme->smallest_rrotate = 0;
+	extreme->smallest_flag = 0;
 }

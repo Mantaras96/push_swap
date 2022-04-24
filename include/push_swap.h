@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/23 20:28:15 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 14:47:37 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int			is_sorted(t_rules *stack);
 //Start structs (start_obj.c)
 t_extreme	*start_obj_extreme(t_extreme *extreme);
 t_rules		*start_obj_rules(t_rules *frame, char **argv);
+void		reset_obj_extreme(t_extreme *extreme);
 //Save values on struct (create_list_value.c)
 void		create_list_argv_splitted(char **str, t_rules *stack);
 void		create_list_argv(int argc, char **str, t_rules *stack);
@@ -104,6 +105,13 @@ void		save_numbers_on_stack(int argc, char **argv, t_rules *stack);
 //Some utils can be fine (utils.c)
 void		add_value_end(t_rules *frame, int num);
 void		find_median(t_rules *rules, t_stack *stack, t_extreme *extreme);
+void		push_median_to_b(t_rules *rules, t_extreme *extreme, int split);
+int		moves_rotate(t_rules *rules, int element);
+int		moves_rrotate(t_rules *rules, int element);
+void		moves_biggest(t_rules *rules, t_extreme *extreme);
+void		moves_smallest(t_rules *rules, t_extreme *extreme);
+void		set_rotate_flag(t_extreme *extreme);
+void		find_movements(t_rules *rules, t_extreme *extreme);
 //Some utils biggest smallest (utils_biggest_smallest.c)
 void		find_biggest_a(t_rules *rules, t_extreme *extreme);
 void		find_smallest_a(t_rules *rules, t_extreme *extreme);
@@ -119,6 +127,10 @@ void		resolve_three_numbers(t_rules *stacks);
 //Resolve when send 4 or 5 numbers
 void		resolve_4_or_5(t_rules *rules, t_extreme *extreme);
 void		resolve_four(t_rules *rules, t_extreme *extreme);
+//Resolve 5 - 99 numbers (resolve_hundred.c)
+void    resolve_hundred(t_rules *rules, t_extreme *extreme);
+void    push_big_or_small_hundred(t_rules *rules, t_stack *stack, t_stack *stack_end, t_extreme *extreme);
+void	rotate_and_push_to_a_hundred(t_rules *rules, t_extreme *extreme);
 // //Order
 // void	sort_stack_chunks(t_stacks *stacks);
 // int		calcule_chunks(t_stacks *stacks);
