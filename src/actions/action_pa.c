@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 10:46:17 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/23 19:02:52 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 15:55:32 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	delete_first_element(t_rules *rules, int stack)
 		if ((*temp1)->next == *temp1)
 		{
 			free(*temp1);
-			temp1 = NULL;
+			*temp1 = NULL;
 		}
 		else
 		{

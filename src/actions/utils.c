@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:11:39 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/24 15:27:57 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 19:35:39 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,6 @@ void	find_median(t_rules *rules, t_stack *stack, t_extreme *extreme)
 	rules->quarter = array[quarter_len];
 	rules->median = array[quarter_len * 2];
 	rules->three_quarters = array[quarter_len * 3];
-	ft_putnbr_fd(rules->quarter, 1);
-	ft_putnbr_fd(rules->median, 1);
-	ft_putnbr_fd(rules->three_quarters, 1);
 	free(array);
 }
 
@@ -87,9 +84,9 @@ void	push_median_to_b(t_rules *rules, t_extreme *extreme, int split)
 	t_stack	*stack;
 	t_stack	*temp1_end;
 	int		interceptor;
-	
+
 	stack = rules->a;
-	temp1_end = rules->a->prev; 
+	temp1_end = rules->a->prev;
 	interceptor = 1;
 	find_smallest_a(rules, extreme);
 	while (interceptor)
@@ -111,30 +108,30 @@ void	push_median_to_b(t_rules *rules, t_extreme *extreme, int split)
 
 int	moves_rotate(t_rules *rules, int element)
 {
-	t_stack *temp1;
-	int count_moves;
-	
+	t_stack	*temp1;
+	int		count_moves;
+
 	count_moves = 0;
 	temp1 = rules->b;
 	while (temp1->nbr != element)
 	{
 		count_moves++;
-		temp1 = temp1->next;		
+		temp1 = temp1->next;
 	}
 	return (count_moves);
 }
 
 int	moves_rrotate(t_rules *rules, int element)
 {
-	t_stack *temp1;
-	int count_moves;
-	
+	t_stack	*temp1;
+	int		count_moves;
+
 	count_moves = 0;
 	temp1 = rules->b;
 	while (temp1->nbr != element)
 	{
 		count_moves++;
-		temp1 = temp1->prev;		
+		temp1 = temp1->prev;
 	}
 	return (count_moves);
 }
@@ -172,7 +169,6 @@ void	set_rotate_flag(t_extreme *extreme)
 		extreme->big_rotate = -1;
 		extreme->smallest_flag = 1;
 	}
-
 	else if (extreme->big_rrotate != -1 && (extreme->big_rrotate >= extreme->smallest_rotate && extreme->big_rrotate >= extreme->smallest_rrotate))
 	{
 		extreme->big_rrotate = -1;
@@ -192,12 +188,10 @@ void	set_rotate_flag(t_extreme *extreme)
 
 void	find_movements(t_rules *rules, t_extreme *extreme)
 {
-	t_stack *s;
-	
+	t_stack	*s;
+
 	s = rules->b;
 	moves_smallest(rules, extreme);
 	moves_biggest(rules, extreme);
 	set_rotate_flag(extreme);
-	ft_putnbr_fd(extreme->smallest_flag, 1);
-	ft_putnbr_fd(extreme->big_flag, 1);
 }

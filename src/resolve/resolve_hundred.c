@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 20:16:28 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/24 15:33:08 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 19:31:17 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	rotate_and_push_to_a_hundred(t_rules *rules, t_extreme *extreme)
 	reset_obj_extreme(extreme);
 }
 
-void    push_big_or_small_hundred(t_rules *rules, t_stack *stack, t_stack *stack_end, t_extreme *extreme)
+void	push_big_or_small_hundred(t_rules *rules, t_stack *stack, t_stack *stack_end, t_extreme *extreme)
 {
 	while (1)
 	{
-		while (stack->nbr !=  extreme->smallest && stack->nbr != extreme->biggest)
+		while (stack->nbr != extreme->smallest && stack->nbr != extreme->biggest)
 			stack = stack->next;
 		if (stack->nbr == extreme->smallest || stack->nbr == extreme->biggest)
 		{
@@ -46,38 +46,30 @@ void    push_big_or_small_hundred(t_rules *rules, t_stack *stack, t_stack *stack
 		else
 			stack = stack->next;
 		if (stack == stack_end)
-			break;
+			break ;
 		stack = rules->b;
 	}
 }
 
-void    resolve_hundred(t_rules *rules, t_extreme *extreme)
+void	resolve_hundred(t_rules *rules, t_extreme *extreme)
 {
-    int split;
-    ft_putstr_fd("Menos 100 resolve\n", 1);
-    split = 1;
-    find_median(rules, rules->a, extreme);
-    while (rules->a && split < 3)
-    {
-		ft_putstr_fd("Menos 100 resolve while\n", 1);
-        push_median_to_b(rules, extreme, split);
-        //while(rules->b)
-        //{
-			ft_putstr_fd("Menos 100 extrmee while\n", 1);
-            find_biggest_b(rules, extreme);
-			ft_putstr_fd("biggest:", 1);
-			ft_putnbr_fd(extreme->biggest, 1);
-            ft_putstr_fd("\n", 1);
+	int	split;
+
+	split = 1;
+	find_median(rules, rules->a, extreme);
+	while (rules->a && split < 3)
+	{
+		push_median_to_b(rules, extreme, split);
+		while (rules->b)
+		{
+			find_biggest_b(rules, extreme);
 			find_smallest_b(rules, extreme);
-			ft_putstr_fd("smallest:", 1);
-			ft_putnbr_fd(extreme->smallest, 1);
-			ft_putstr_fd("\n", 1);
-            find_movements(rules, extreme);
-			if(rules->b && (extreme->smallest_rotate >= 0 || extreme->smallest_rrotate >= 0 || extreme->big_rotate >= 0 || extreme->big_rrotate >= 0))
-			push_big_or_small_hundred(rules, rules->b, rules->b->prev, extreme);
-        //}
-		while(--extreme->after_rotate)
+			find_movements(rules, extreme);
+			if (rules->b && (extreme->smallest_rotate >= 0 || extreme->smallest_rrotate >= 0 || extreme->big_rotate >= 0 || extreme->big_rrotate >= 0))
+				push_big_or_small_hundred(rules, rules->b, rules->b->prev, extreme);
+		}
+		while (--extreme->after_rotate)
 			action_ra(rules, 1);
 		split++;
-    }
+	}
 }

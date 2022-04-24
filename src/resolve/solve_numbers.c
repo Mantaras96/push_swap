@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 10:25:20 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/23 19:35:11 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 19:27:12 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	solve_numbers(t_rules *rules, t_extreme *extreme)
 		resolve_4_or_5(rules, extreme);
 	else if (rules->argc <= 100)
 		resolve_hundred(rules, extreme);
+	else
+		resolve_more_hundred(rules, extreme);
 }

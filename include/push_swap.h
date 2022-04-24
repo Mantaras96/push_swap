@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/24 14:47:37 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 18:42:52 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,14 @@ void		resolve_four(t_rules *rules, t_extreme *extreme);
 void    resolve_hundred(t_rules *rules, t_extreme *extreme);
 void    push_big_or_small_hundred(t_rules *rules, t_stack *stack, t_stack *stack_end, t_extreme *extreme);
 void	rotate_and_push_to_a_hundred(t_rules *rules, t_extreme *extreme);
+
+void push_first(t_rules *rules);
+void push_second(t_rules *rules);
+void push_three(t_rules *rules);
+void push_quarts(t_rules *rules);
+//Resolve 100 - XXX numbers (resolve_more_hundred.c)
+void    resolve_more_hundred(t_rules *rules, t_extreme *extreme);
+
 // //Order
 // void	sort_stack_chunks(t_stacks *stacks);
 // int		calcule_chunks(t_stacks *stacks);

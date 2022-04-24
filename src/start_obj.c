@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:36:25 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/24 10:52:54 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/24 19:35:47 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_extreme	*start_obj_extreme(t_extreme *extreme)
 	return (extreme);
 }
 
-void reset_obj_extreme(t_extreme *extreme)
+void	reset_obj_extreme(t_extreme *extreme)
 {
 	extreme->biggest = 0;
 	extreme->big_rotate = 0;
