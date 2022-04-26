@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:01:44 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/24 19:36:14 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:27:03 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,33 @@ void	show_error_msg(char *str)
 	exit(0);
 }
 
+void	free_stack_numbers(t_stack *stack)
+{	
+	t_stack	*next;
+	t_stack	*delete;
+
+	if (stack)
+	{
+		next = stack->next;
+		while (next != stack)
+		{
+			delete = next;
+			next = next->next;
+			free(delete);
+		}
+		free(next);
+	}
+}
+
 void	show_error_and_free(char *str, t_rules *rules, t_extreme *extreme)
 {
 	ft_putstr_fd(str, 1);
 	if (rules)
 	{
 		if (rules->a)
-			//free_stack(rules->a);
+			free_stack_numbers(rules->a);
 		if (rules->b)
-			//free_stack(rules->b);
+			free_stack_numbers(rules->b);
 		if (rules->line)
 			free(rules->line);
 		if (rules->str)

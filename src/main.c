@@ -6,32 +6,12 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:03:29 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/24 19:35:59 by amantara         ###   ########.fr       */
+/*   Updated: 2022/04/26 21:03:05 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// int	ft_mirartodobien(t_rules *rules)
-// {
-// 	t_stack	*lst;
-// 	int		count;
-
-// 	lst = rules->a;
-// 	count = 0;
-// 	while (count < rules->argc)
-// 	{
-// 		ft_putnbr_fd(lst->nbr, 1);
-// 		lst = lst->next;
-// 		count++;
-// 	}
-// 	ft_putstr_fd("Stack b;", 1);
-// 	lst = rules->b;
-// 	count = 0;
-// 	return (count);
-// }
-
-	//ft_mirartodobien(rules);
 int	main(int argc, char **argv)
 {
 	t_rules		*rules;
@@ -48,5 +28,6 @@ int	main(int argc, char **argv)
 	save_numbers_on_stack(argc - 1, argv, rules);
 	if (!is_sorted(rules))
 		solve_numbers(rules, extreme);
+	//show_error_and_free("Fin", rules, extreme);
 	return (0);
 }

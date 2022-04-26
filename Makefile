@@ -6,7 +6,7 @@
 #    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/24 18:37:02 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/26 20:38:50 by amantara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC	=	main.c \
 		actions/action_rra.c \
 		actions/action_sa.c \
 		actions/utils.c \
+		actions/utils_2.c \
 		actions/utils_biggest_smallest.c \
 		resolve/solve_numbers.c \
 		resolve/resolve_three_numbers.c \
