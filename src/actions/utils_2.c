@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:12:29 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/26 19:59:19 by amantara         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:45:09 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,6 @@ void	set_rotate_flag(t_extreme *e)
 
 void	find_movements(t_rules *rules, t_extreme *extreme)
 {
-	t_stack	*s;
-
-	s = rules->b;
 	moves_smallest(rules, extreme);
 	moves_biggest(rules, extreme);
 	set_rotate_flag(extreme);

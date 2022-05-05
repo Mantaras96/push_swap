@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   resolve_three_numbers.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 10:43:44 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/23 13:21:42 by amantara         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:44:13 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	resolve_three_numbers(t_rules *stacks)
 	}
 	else if (get_case(stack_numbers) == 5)
 		action_rra(stacks, 1);
+	free(stack_numbers);
 }
 
 void	order_two_three_numbers(t_rules *stacks)

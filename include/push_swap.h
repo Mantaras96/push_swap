@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/26 20:26:32 by amantara         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:48:39 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,35 +48,12 @@ typedef struct s_extreme
 	int		big_rrotate;
 	int		big_flag;
 
-	int		smallest;
+	long	smallest;
 	int		smallest_rotate;
 	int		smallest_rrotate;
 	int		smallest_flag;
 	int		after_rotate;
 }				t_extreme;
-
-// TODO: Remove when finish 
-// typedef struct s_number_list
-// {
-// 	int						nbr;
-// 	struct s_number_list	*next;
-// }				t_number_list;
-
-// typedef struct s_stacks
-// {
-// 	int						nbr_of_element;
-// 	struct s_number_list	*a;
-// 	struct s_number_list	*b;
-// }				t_stacks;
-
-// 
-// int		ft_mirartodobien(t_number_list *lst);
-// int		main(int argc, char **argv);
-// void	validate_duplicates(char *number, char **argv);
-// void	validate_arguments(char *str);
-// void	ft_lstadd_back_number_list(t_number_list **last, t_number_list *new);
-// int		is_sorted(t_stacks *stack);
-// void	create_list_argv_splitted(char **str, t_stacks *stack);
 
 // Actions
 int			action_ss(t_rules *stacks);
@@ -93,7 +70,6 @@ int			action_rr(t_rules *stacks);
 //Mostrar mensaje de error. (error.c)
 void		show_error_msg(char *str);
 void		show_error_and_free(char *str, t_rules *rules, t_extreme *extreme);
-
 //Check if sorted (is_sorted.c)
 int			is_sorted(t_rules *stack);
 //Start structs (start_obj.c)
@@ -119,13 +95,10 @@ void		find_biggest_a(t_rules *rules, t_extreme *extreme);
 void		find_smallest_a(t_rules *rules, t_extreme *extreme);
 void		find_biggest_b(t_rules *rules, t_extreme *extreme);
 void		find_smallest_b(t_rules *rules, t_extreme *extreme);
-
 //Start solver (solve_numbers.c)
 void		solve_numbers(t_rules *rules, t_extreme *extreme);
-
 void		order_two_three_numbers(t_rules *stacks);
 void		resolve_three_numbers(t_rules *stacks);
-
 //Resolve when send 4 or 5 numbers
 void		resolve_4_or_5(t_rules *rules, t_extreme *extreme);
 void		resolve_four(t_rules *rules, t_extreme *extreme);
@@ -134,28 +107,14 @@ void		resolve_hundred(t_rules *rules, t_extreme *extreme);
 void		push_big_or_small_hundred(t_rules *rules, t_stack *stack,
 				t_stack *stack_end, t_extreme *extreme);
 void		rotate_and_push_to_a_hundred(t_rules *rules, t_extreme *extreme);
-
 void		push_first(t_rules *rules);
 void		push_second(t_rules *rules);
 void		push_three(t_rules *rules);
 void		push_quarts(t_rules *rules);
 //Resolve 100 - XXX numbers (resolve_more_hundred.c)
 void		resolve_more_hundred(t_rules *r, t_extreme *e);
-
-// //Order
-// void	sort_stack_chunks(t_stacks *stacks);
-// int		calcule_chunks(t_stacks *stacks);
-// void	order_two_three_numbers(t_stacks *stacks);
-// void	order_twenty_numbers(t_stacks *stacks);
-// int		find_fourth_big_number(t_number_list *lst, int size);
-// int		ft_stacklen(t_number_list *lst);
-// int		get_biggest_number_i(t_number_list *lst);
-
-// void	send_under_base_to_b(int base_number, t_stacks *stacks);
-// void	find_number_and_send(t_stacks *stacks, int base_number, int size);
-// int		count_numbers_less_or_equal(int number, t_number_list *lst);
-// int		find_number(int chunks, t_number_list *lst, int size);
-
-// void	send_number_stack_b(int size, int index, t_stacks *stack);
+//Validate arguments (validations.c)
+void		validate_duplicates(char *number, char **argv);
+void		validate_arguments(char *str);
 
 #endif

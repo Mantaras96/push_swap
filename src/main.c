@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:03:29 by amantara          #+#    #+#             */
-/*   Updated: 2022/04/26 21:03:05 by amantara         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:48:08 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int	main(int argc, char **argv)
 	save_numbers_on_stack(argc - 1, argv, rules);
 	if (!is_sorted(rules))
 		solve_numbers(rules, extreme);
-	//show_error_and_free("Fin", rules, extreme);
+	show_error_and_free("Fin", rules, extreme);
 	return (0);
 }

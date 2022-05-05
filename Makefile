@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
+#    By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:02:21 by albertmanta       #+#    #+#              #
-#    Updated: 2022/04/26 20:38:50 by amantara         ###   ########.fr        #
+#    Updated: 2022/05/05 19:59:12 by albertmanta      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC	=	main.c \
 		start_obj.c \
 		is_sorted.c \
 		create_list_value.c \
+		validations.c \
 		actions/action_pa.c \
 		actions/action_ra.c \
 		actions/action_rra.c \

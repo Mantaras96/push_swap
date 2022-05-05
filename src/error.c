@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:01:44 by albertmanta       #+#    #+#             */
-/*   Updated: 2022/04/26 20:27:03 by amantara         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:47:57 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	show_error_msg(char *str)
 {
 	ft_putstr_fd(str, 1);
-	exit(0);
 }
 
 void	free_stack_numbers(t_stack *stack)
@@ -38,7 +37,7 @@ void	free_stack_numbers(t_stack *stack)
 
 void	show_error_and_free(char *str, t_rules *rules, t_extreme *extreme)
 {
-	ft_putstr_fd(str, 1);
+	(void) str;
 	if (rules)
 	{
 		if (rules->a)
@@ -47,8 +46,6 @@ void	show_error_and_free(char *str, t_rules *rules, t_extreme *extreme)
 			free_stack_numbers(rules->b);
 		if (rules->line)
 			free(rules->line);
-		if (rules->str)
-			free(rules->str);
 		if (rules->argv)
 			free(rules->argv);
 		free(rules);
