@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_list_value.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:10:50 by amantara          #+#    #+#             */
-/*   Updated: 2022/05/05 20:00:55 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/05/07 17:37:27 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	create_list_argv_splitted(char **str, t_rules *stack)
 		add_value_end(stack, ft_atoi(str[i]));
 		i++;
 	}
+	free_matrix(str, i);
 	stack->argc = i;
 }
 
@@ -45,7 +46,7 @@ void	create_list_argv(int argc, char **str, t_rules *stack)
 	while (i <= argc)
 	{
 		validate_arguments(str[i]);
-		validate_duplicates(str[i], str);
+		validate_duplicates2(str[i], str);
 		add_value_end(stack, ft_atoi(str[i]));
 		i++;
 	}

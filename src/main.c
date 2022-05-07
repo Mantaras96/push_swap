@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:03:29 by amantara          #+#    #+#             */
-/*   Updated: 2022/05/05 23:48:08 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/05/07 17:42:40 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char **argv)
 	extreme = NULL;
 	if (argc < 2)
 	{
-		show_error_msg("Error numero de parametros");
+		show_error_msg("Error numero de parametros\n");
+		return (0);
 	}
 	rules = start_obj_rules(rules, argv);
 	extreme = start_obj_extreme(extreme);

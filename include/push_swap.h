@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
+/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:58:56 by amantara          #+#    #+#             */
-/*   Updated: 2022/05/05 23:48:39 by albertmanta      ###   ########.fr       */
+/*   Updated: 2022/05/07 17:45:58 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int			action_rr(t_rules *stacks);
 //Mostrar mensaje de error. (error.c)
 void		show_error_msg(char *str);
 void		show_error_and_free(char *str, t_rules *rules, t_extreme *extreme);
+void		free_matrix(char **str, int i);
 //Check if sorted (is_sorted.c)
 int			is_sorted(t_rules *stack);
 //Start structs (start_obj.c)
@@ -116,5 +117,6 @@ void		resolve_more_hundred(t_rules *r, t_extreme *e);
 //Validate arguments (validations.c)
 void		validate_duplicates(char *number, char **argv);
 void		validate_arguments(char *str);
+void		validate_duplicates2(char *number, char **argv);
 
 #endif
